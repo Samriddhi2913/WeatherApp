@@ -35,5 +35,17 @@
         </div>
     </div>
 </div>
+<script>
+   const apiKey = "fa13b97bda723efe8e86966a209972fe";
+   const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=Lucknow";
+
+   async function checkWeather() {
+    const response= await fetch( apiUrl + `&appid=${apiKey}`);
+    var data = await response.json();
+
+    console.log(data);
+   }
+checkWeather();
+</script>
 </body>
 </html>
