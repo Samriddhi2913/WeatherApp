@@ -37,10 +37,14 @@
 </div>
 <script>
    const apiKey = "fa13b97bda723efe8e86966a209972fe";
-   const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=Lucknow";
+   const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
+   
+   const searchBox=document.querySelector(".search input");
+   const searchBtn=document.querySelector(".search button");
+   const weathetIcon = document.querySelector(".weather-icon");
 
-   async function checkWeather() {
-    const response= await fetch( apiUrl + `&appid=${apiKey}`);
+   async function checkWeather(city) {
+    const response= await fetch( apiUrl + city + `&appid=${apiKey}`);
     var data = await response.json();
 
     console.log(data);
@@ -49,8 +53,28 @@
     document.querySelector(".temp").innerHTML=Math.round(data.main.temp) + "°C";
     document.querySelector(".humidity").innerHTML=data.main.humidity + "%";
     document.querySelector(".wind").innerHTML=data.wind.speed + "km/h";
+
+    if(data.weather[0].main == "Clouds"){
+        weathetIcon.src = "images/clouds.png";
+    }
+    else if(data.weather[0].main == "Clear"){
+        weathetIcon.src = "images/clear.png";
+    }
+    else if(data.weather[0].main == "Rain"){
+        weathetIcon.src = "images/rain.png";
+    }
+    else if(data.weather[0].main == "Drizzle"){
+        weathetIcon.src = "images/drizzle.png";
+    }
+    else if(data.weather[0].main == "Mist"){
+        weathetIcon.src = "images/mist.png";
+    }
    }
-checkWeather();
+
+   searchBtn.addEventListener("click", ()=>{
+    checkWeather(searchBox.value);
+   })
+   
 </script>
 </body>
 </html>
