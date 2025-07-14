@@ -21,18 +21,3 @@ A sleek and responsive weather app built with HTML, CSS, and JavaScript, using t
 - Frontend: HTML5, CSS3, JavaScript (Vanilla)
 
 - API: OpenWeatherMap API
-
-### 📁 Folder Structure
-
-weather-app/
-├── index.html
-├── style.css
-├── images/
-│   ├── clear.png
-│   ├── clouds.png
-│   ├── drizzle.png
-│   ├── humidity.png
-│   ├── mist.png
-│   ├── rain.png
-│   ├── search.png
-│   └── wind.png
