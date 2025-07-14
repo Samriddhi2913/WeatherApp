@@ -15,3 +15,10 @@ A sleek and responsive weather app built with HTML, CSS, and JavaScript, using t
 
 - 🎨 Responsive and modern UI design
 
+
+### 🔧 Tech Stack
+
+- Frontend: HTML5, CSS3, JavaScript (Vanilla)
+
+- API: OpenWeatherMap API
+
