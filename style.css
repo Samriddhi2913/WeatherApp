@@ -220,6 +220,7 @@ body.dark-mode .forecast-card:hover {
 
 .card.clouds {
   background: linear-gradient(to top, #bdc3c7, #2c3e50);
+  background-image: url('images/CloudyW.gif'); 
   animation: cloudDrift 20s linear infinite;
 }
 
