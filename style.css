@@ -200,3 +200,41 @@ body.dark-mode .forecast-card {
 body.dark-mode .forecast-card:hover {
   background: rgba(255, 255, 255, 0.2);
 }
+/* Base card styling remains */
+.card.clear {
+  background: linear-gradient(to top, #fddb92, #d1fdff); /* sunny gradient */
+  background-size: cover;
+  animation: sunnyPulse 4s infinite alternate;
+}
+
+@keyframes sunnyPulse {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 10px; }
+}
+
+.card.rain {
+  background: linear-gradient(to bottom, #4e54c8, #8f94fb);
+  background-image: url('images/rain-bg.gif'); 
+  background-size: cover;
+}
+
+.card.clouds {
+  background: linear-gradient(to top, #bdc3c7, #2c3e50);
+  animation: cloudDrift 20s linear infinite;
+}
+
+@keyframes cloudDrift {
+  0% { background-position: 0 0; }
+  100% { background-position: 100% 0; }
+}
+
+.card.mist {
+  background: radial-gradient(circle, #d3cce3, #e9e4f0);
+  background-size: cover;
+  animation: mistFlow 6s ease-in-out infinite alternate;
+}
+
+@keyframes mistFlow {
+  0% { filter: blur(1px); }
+  100% { filter: blur(3px); }
+}

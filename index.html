@@ -64,6 +64,7 @@
     const unitBtn = document.getElementById("unitBtn");
     const themeBtn = document.getElementById("themeBtn");
     const forecastContainer = document.querySelector(".forecast-container");
+    const card = document.querySelector(".card");
 
     let isCelsius = true;
     let currentData = null;
@@ -118,7 +119,9 @@
         Drizzle: "drizzle.png",
         Mist: "mist.png"
       };
-      weatherIcon.src = "images/" + (iconMap[data.weather[0].main] || "default.png");
+      const condition = data.weather[0].main;
+      weatherIcon.src = "images/" + (iconMap[condition] || "default.png");
+      updateBackground(condition);
 
       document.querySelector(".weather").style.display = "block";
     }
@@ -161,6 +164,27 @@
 
     function formatTemp(tempC) {
       return isCelsius ? `${Math.round(tempC)}°C` : `${Math.round(tempC * 9/5 + 32)}°F`;
+    }
+
+    function updateBackground(condition) {
+      card.classList.remove("clear", "rain", "clouds", "mist");
+      switch (condition) {
+        case "Clear":
+          card.classList.add("clear");
+          break;
+        case "Rain":
+        case "Drizzle":
+          card.classList.add("rain");
+          break;
+        case "Clouds":
+          card.classList.add("clouds");
+          break;
+        case "Mist":
+          card.classList.add("mist");
+          break;
+        default:
+          card.classList.add("clear");
+      }
     }
 
     searchBtn.addEventListener("click", () => {
