@@ -7,7 +7,7 @@
 
 body, html {
   height: 100%;
-  background: linear-gradient(to right, #6dd5ed, #2193b0); /* 🔥 New gradient background */
+  background: linear-gradient(to right, #6dd5ed, #2193b0);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,19 +15,18 @@ body, html {
 }
 
 .card {
-  background: rgba(255, 255, 255, 0.25); /* 🔥 Glass effect */
+  background: rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
   border-radius: 20px;
   padding: 30px 30px 20px;
   width: 100%;
   max-width: 500px;
   color: #ffffff;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
   text-align: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  margin-top: 20px;
 }
 
-/* 🔥 Enhanced search bar */
 .search {
   display: flex;
   margin-bottom: 20px;
@@ -61,18 +60,20 @@ body, html {
   width: 20px;
 }
 
-.unit-toggle {
-  margin-bottom: 15px;
+.unit-toggle,
+.theme-toggle {
+  margin-bottom: 10px;
 }
 
-.unit-toggle button {
+.unit-toggle button,
+.theme-toggle button {
   background: #ffffff;
-  color: #2193b0;
   border: none;
   padding: 6px 14px;
   border-radius: 20px;
   font-weight: 600;
   cursor: pointer;
+  color: #2193b0;
 }
 
 .weather-icon {
@@ -97,23 +98,18 @@ body, html {
   margin-top: 25px;
 }
 
-.details .col {
-  text-align: center;
-}
-
-.details .col img {
+.col img {
   width: 36px;
   margin-bottom: 6px;
 }
 
-.details .col p {
+.col p {
   margin: 2px 0;
   font-size: 16px;
 }
 
-/* 🔥 Forecast layout */
 .forecast-container {
-  display: grid;
+  display: none;
   grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
   gap: 12px;
   margin-top: 25px;
@@ -134,24 +130,8 @@ body, html {
   background: rgba(255, 255, 255, 0.28);
 }
 
-.forecast-card h3 {
-  font-size: 14px;
-  font-weight: 500;
-  margin-bottom: 6px;
-}
-
-.forecast-card img {
-  width: 40px;
-  margin: 5px auto;
-}
-
-.forecast-card p {
-  font-size: 15px;
-  font-weight: 500;
-}
-
-/* 🔥 Error + Loader */
 .error {
+  display: none;
   color: #ffdede;
   font-weight: 600;
   margin-bottom: 10px;
@@ -171,4 +151,29 @@ body, html {
 @keyframes spin {
   0% { transform: rotate(0); }
   100% { transform: rotate(360deg); }
+}
+
+/* 🌙 Dark Mode */
+body.dark-mode {
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+}
+
+body.dark-mode .card {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+}
+
+body.dark-mode input,
+body.dark-mode button {
+  background: #e0f7fa;
+  color: #222;
+}
+
+body.dark-mode .forecast-card {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .forecast-card:hover {
+  background: rgba(255, 255, 255, 0.2);
 }
