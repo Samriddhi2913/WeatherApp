@@ -214,7 +214,7 @@ body.dark-mode .forecast-card:hover {
 
 .card.rain {
   background: linear-gradient(to bottom, #4e54c8, #8f94fb);
-  background-image: url('images/rain-bg.gif'); 
+  background-image: url('images/Rainy.gif'); 
   background-size: cover;
 }
 
