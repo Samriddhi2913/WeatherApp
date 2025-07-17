@@ -37,6 +37,6 @@ A sleek and responsive weather app built with HTML, CSS, and JavaScript, using t
 ![alt text](images/image.png)
 
 
-#### From °C 
+#### From °C to °F
 
 ![alt text](images/image-2.png)
