@@ -28,3 +28,15 @@ A sleek and responsive weather app built with HTML, CSS, and JavaScript, using t
 ### 📸 Screenshots
 
 #### Light Mode
+
+![alt text](images/image-1.png)
+
+
+#### Dark Mode
+
+![alt text](images/image.png)
+
+
+#### From °C 
+
+![alt text](images/image-2.png)
